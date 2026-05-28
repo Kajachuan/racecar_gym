@@ -1,7 +1,7 @@
 pybullet
 scipy
-numpy
+numpy>=2.0.0
 gymnasium
 yamldataclassconfig
-nptyping
+nptyping>=2.5.0
 pettingzoo
