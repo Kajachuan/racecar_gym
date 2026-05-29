@@ -2,5 +2,5 @@ pybullet
 scipy
 numpy>=2.0.0
 gymnasium
-yamldataclassconfig
+yamldataclassconfig==1.5.0
 pettingzoo
