@@ -86,6 +86,7 @@ def load_world(spec: WorldSpec, agents: List[Agent]) -> core.World:
     if not os.path.exists(config_file):
         try:
             print(f'Downloading {spec.name} track.')
+            os.makedirs(scene_path, exist_ok=True)
             urllib.request.urlretrieve(
                 f'https://github.com/axelbr/racecar_gym/releases/download/tracks-v1.0.0/{spec.name}.zip',
                 f'{scene_path}/{spec.name}.zip'
