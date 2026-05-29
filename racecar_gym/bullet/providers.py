@@ -50,7 +50,7 @@ def _compute_color(name: str) -> Tuple[float, float, float, float]:
 
 
 def load_vehicle(spec: VehicleSpec) -> core.Vehicle:
-    config_file = f'{base_path}/../../models/vehicles/{spec.name}/{spec.name}.yml'
+    config_file = os.path.abspath(os.path.join(base_path, '..', 'models', 'vehicles', spec.name, f'{spec.name}.yml'))
     if not os.path.exists(config_file):
         raise NotImplementedError(f'No vehicle with name {spec.name} implemented.')
 
@@ -80,7 +80,7 @@ def load_vehicle(spec: VehicleSpec) -> core.Vehicle:
 
 
 def load_world(spec: WorldSpec, agents: List[Agent]) -> core.World:
-    scene_path = f'{base_path}/../../models/scenes'
+    scene_path = os.path.abspath(os.path.join(base_path, '..', 'models', 'scenes'))
     config_file = f'{scene_path}/{spec.name}/{spec.name}.yml'
 
     if not os.path.exists(config_file):

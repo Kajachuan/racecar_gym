@@ -16,7 +16,12 @@ setup(
     version="0.0.1",
     packages=find_packages(),
     include_package_data=True,
-    package_data={"racecar_gym": ["scenarios/*.yml", "scenarios/**/*.yml"]},
+    package_data={
+        "racecar_gym": [
+            "scenarios/**/*",
+            "models/**/*",
+        ]
+    },
     install_requires=requirements,
     author='Axel Brunnbauer',
     author_email='axel.brunnbauer@gmx.at',
