@@ -14,6 +14,10 @@ class MultiAgentRaceEnv(gymnasium.Env):
     }
 
     def __init__(self, scenario: str, render_mode: str = 'human', render_options: Dict = None):
+        from racecar_gym.core.specs import ScenarioSpec
+        spec = ScenarioSpec()
+        spec.load(scenario)
+        
         self._scenario = MultiAgentScenario.from_spec(scenario, rendering=render_mode == 'human')
         self._initialized = False
         assert render_mode in self.metadata['render_modes'], f'Invalid render mode: {render_mode}'

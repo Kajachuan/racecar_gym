@@ -13,6 +13,10 @@ class SingleAgentRaceEnv(gymnasium.Env):
     }
 
     def __init__(self, scenario: str, render_mode: str = 'human', render_options: Optional[Dict[str, Any]] = None):
+        from racecar_gym.core.specs import ScenarioSpec
+        spec = ScenarioSpec()
+        spec.load(scenario)
+        
         scenario = SingleAgentScenario.from_spec(scenario, rendering=render_mode == 'human')
         self._scenario = scenario
         self._initialized = False
